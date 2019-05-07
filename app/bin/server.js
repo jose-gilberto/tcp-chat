@@ -35,6 +35,8 @@ io.on('connection', socket => {
     } else {
       USERS.push(data.username);
       socket.emit('login-response', { response: true, msg: 'login successfully' });
+      
+      io.sockets.emit('server-message', data.username + ' has connected');
     }
   });
 
@@ -67,7 +69,11 @@ io.on('connection', socket => {
 
   socket.on('connect', () => {
     console.log('debug - A socket has connect');
-  })
+  });
+
+  socket.on('message', data => {
+    socket.broadcast.emit('message', data);
+  });
 
 });
 

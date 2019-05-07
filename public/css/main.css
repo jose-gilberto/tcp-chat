@@ -1,7 +1,30 @@
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
 #login-section {
   height: 100vh;
 }
 
 #chat-section {
   display: none;
+}
+
+#chat {
+  height: calc(80vh - 50px);
+  width: calc(100vw - 50px);
+  margin: 25px;
+  border-radius: 5px;
+  border: 1px solid lightslategray;
+  padding: 15px;
+  overflow-y: scroll;
+  max-height: calc(100vw - 50px);
+  overflow-x: hidden;
+}
+
+#chat-input .input-group {
+  height: calc(20vh - 50px);
+  width: calc(100vw - 50px);
+  margin: 25px;
 }
